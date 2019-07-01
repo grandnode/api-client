@@ -58,13 +58,13 @@ namespace OdataClientGrandNode450
             spec.SpecificationAttributeOptionId = "5d107e372e8d1143384d9580";
             //WebApiServices.AddProductSpecification(product, spec).Wait();
 
-            ProductSpecificationAttributeDto updateSpec = new ProductSpecificationAttributeDto();
+            ProductSpecificationAttributeDto updateSpec = product.SpecificationAttribute.FirstOrDefault();
             updateSpec.AllowFiltering = false;
             updateSpec.DisplayOrder = 2;
             updateSpec.ShowOnProductPage = false;
             updateSpec.SpecificationAttributeId = "5d107e372e8d1143384d9581";
             updateSpec.SpecificationAttributeOptionId = "5d107e372e8d1143384d9583";
-            updateSpec.Id = "";
+
             //WebApiServices.UpdateProductSpecification(product, updateSpec).Wait();
 
             //WebApiServices.RemoveProductSpecification(product, "").Wait();
@@ -78,7 +78,7 @@ namespace OdataClientGrandNode450
 
            // WebApiServices.AddTierPricesToProduct(product, tierPrice).Wait();
 
-            ProductTierPriceDto updatedTierPrice = new ProductTierPriceDto();
+            ProductTierPriceDto updatedTierPrice = product.TierPrices.FirstOrDefault();
             updatedTierPrice.Quantity = 80;
             updatedTierPrice.Price = 600;
             updatedTierPrice.StartDateTimeUtc = DateTime.UtcNow.AddDays(2);
