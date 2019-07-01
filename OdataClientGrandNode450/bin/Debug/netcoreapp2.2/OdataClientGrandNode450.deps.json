@@ -1,0 +1,109 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": "e482e302182cb5e3d0c3afe9822f640475f52548"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "OdataClientGrandNode450/1.0.0": {
+        "dependencies": {
+          "Microsoft.OData.Client": "7.6.0",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "OdataClientGrandNode450.dll": {}
+        }
+      },
+      "Microsoft.OData.Client/7.6.0": {
+        "dependencies": {
+          "Microsoft.OData.Core": "7.6.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.OData.Client.dll": {
+            "assemblyVersion": "7.6.0.30605",
+            "fileVersion": "7.6.0.30605"
+          }
+        }
+      },
+      "Microsoft.OData.Core/7.6.0": {
+        "dependencies": {
+          "Microsoft.OData.Edm": "7.6.0",
+          "Microsoft.Spatial": "7.6.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.OData.Core.dll": {
+            "assemblyVersion": "7.6.0.30605",
+            "fileVersion": "7.6.0.30605"
+          }
+        }
+      },
+      "Microsoft.OData.Edm/7.6.0": {
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.OData.Edm.dll": {
+            "assemblyVersion": "7.6.0.30605",
+            "fileVersion": "7.6.0.30605"
+          }
+        }
+      },
+      "Microsoft.Spatial/7.6.0": {
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Spatial.dll": {
+            "assemblyVersion": "7.6.0.30605",
+            "fileVersion": "7.6.0.30605"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.2.23222"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OdataClientGrandNode450/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.OData.Client/7.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-62SWF24z5QTrFBfq7+FBX+2in45lqiidY6ebEOo8ISHb25u3zevE2/WtidE53HAM51eBtWcjuyrEQTTpdRUPlQ==",
+      "path": "microsoft.odata.client/7.6.0",
+      "hashPath": "microsoft.odata.client.7.6.0.nupkg.sha512"
+    },
+    "Microsoft.OData.Core/7.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p2U+Q3sCHZiieo7/hCV2AaT88D5aE3neS5rugllorkVNQR3wtr0I0/ZKuxB2UoOwO4gtrFwtTeCEGmZzxBaF4A==",
+      "path": "microsoft.odata.core/7.6.0",
+      "hashPath": "microsoft.odata.core.7.6.0.nupkg.sha512"
+    },
+    "Microsoft.OData.Edm/7.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D1YTLORPgu3UNI0cg4Waxj6nh4IKXxV7TpvHqQguSZXN3/cn75iDbIzqabxo7FqF2+qDo77g1EtH3utZyrRhSQ==",
+      "path": "microsoft.odata.edm/7.6.0",
+      "hashPath": "microsoft.odata.edm.7.6.0.nupkg.sha512"
+    },
+    "Microsoft.Spatial/7.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5llx2KOxx9iDL0BL44U9piAJjS/0rbPaJ3SS6UMJra+ZvSvJGmY1mb1U78YGqG65pUaqpxkqxLaZfwzfhs4EdQ==",
+      "path": "microsoft.spatial/7.6.0",
+      "hashPath": "microsoft.spatial.7.6.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "path": "newtonsoft.json/12.0.2",
+      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+    }
+  }
+}
