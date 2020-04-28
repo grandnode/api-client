@@ -24,7 +24,7 @@ namespace OdataClientGrandNode
         {
             Token = token;
             Program.StoreUrl = storeurl;
-            container = new Default.Container(new Uri(Program.StoreUrl + "/odata/"));
+            container = new Default.Container(new Uri(Program.StoreUrl + "odata/"));
             container.BuildingRequest += onBuildingRequest;
             container.MergeOption = MergeOption.AppendOnly;
             return container;
