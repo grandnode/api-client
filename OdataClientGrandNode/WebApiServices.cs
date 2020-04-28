@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OdataClientGrandNode450
+namespace OdataClientGrandNode
 {
     public class WebApiServices
     {

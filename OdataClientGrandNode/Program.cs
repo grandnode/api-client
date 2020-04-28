@@ -8,12 +8,12 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OdataClientGrandNode450
+namespace OdataClientGrandNode
 {
     class Program
     {
-        public static string UserName = "admin@yourstore.com";
-        public static string Password = "1234567";
+        public static string UserName = "admin@yourStore.com";
+        public static string Password = "123456";
         public static string StoreUrl = "http://localhost:16592/";
         public static string TOKEN;
         private static Container container;

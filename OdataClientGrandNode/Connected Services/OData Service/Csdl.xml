@@ -1,0 +1,781 @@
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="Default" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityType Name="LanguageDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="LanguageCulture" Type="Edm.String" />
+        <Property Name="UniqueSeoCode" Type="Edm.String" />
+        <Property Name="FlagImageFileName" Type="Edm.String" />
+        <Property Name="Rtl" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DefaultCurrencyId" Type="Edm.String" />
+        <Property Name="Published" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="CurrencyDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="CurrencyCode" Type="Edm.String" />
+        <Property Name="Rate" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DisplayLocale" Type="Edm.String" />
+        <Property Name="CustomFormatting" Type="Edm.String" />
+        <Property Name="Published" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CreatedOnUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="UpdatedOnUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="StoreDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Url" Type="Edm.String" />
+        <Property Name="SslEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SecureUrl" Type="Edm.String" />
+        <Property Name="Hosts" Type="Edm.String" />
+        <Property Name="DefaultLanguageId" Type="Edm.String" />
+        <Property Name="DefaultWarehouseId" Type="Edm.String" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CompanyName" Type="Edm.String" />
+        <Property Name="CompanyAddress" Type="Edm.String" />
+        <Property Name="CompanyPhoneNumber" Type="Edm.String" />
+        <Property Name="CompanyVat" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="CountryDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="AllowsBilling" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AllowsShipping" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TwoLetterIsoCode" Type="Edm.String" />
+        <Property Name="ThreeLetterIsoCode" Type="Edm.String" />
+        <Property Name="NumericIsoCode" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SubjectToVat" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Published" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="StateProvinceDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="CountryId" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Abbreviation" Type="Edm.String" />
+        <Property Name="Published" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="MessageTemplateDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ViewPath" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="PictureDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="PictureBinary" Type="Edm.Binary" />
+        <Property Name="MimeType" Type="Edm.String" />
+        <Property Name="SeoFilename" Type="Edm.String" />
+        <Property Name="AltAttribute" Type="Edm.String" />
+        <Property Name="TitleAttribute" Type="Edm.String" />
+        <Property Name="IsNew" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ProductDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="ProductType" Type="Default.ProductType" Nullable="false" />
+        <Property Name="ParentGroupedProductId" Type="Edm.String" />
+        <Property Name="VisibleIndividually" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="SeName" Type="Edm.String" />
+        <Property Name="ShortDescription" Type="Edm.String" />
+        <Property Name="FullDescription" Type="Edm.String" />
+        <Property Name="AdminComment" Type="Edm.String" />
+        <Property Name="ProductTemplateId" Type="Edm.String" />
+        <Property Name="VendorId" Type="Edm.String" />
+        <Property Name="ShowOnHomePage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MetaKeywords" Type="Edm.String" />
+        <Property Name="MetaDescription" Type="Edm.String" />
+        <Property Name="MetaTitle" Type="Edm.String" />
+        <Property Name="AllowCustomerReviews" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ApprovedRatingSum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="NotApprovedRatingSum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ApprovedTotalReviews" Type="Edm.Int32" Nullable="false" />
+        <Property Name="NotApprovedTotalReviews" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ExternalId" Type="Edm.String" />
+        <Property Name="Sku" Type="Edm.String" />
+        <Property Name="ManufacturerPartNumber" Type="Edm.String" />
+        <Property Name="Gtin" Type="Edm.String" />
+        <Property Name="IsGiftCard" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="GiftCardType" Type="Default.GiftCardType" Nullable="false" />
+        <Property Name="OverriddenGiftCardAmount" Type="Edm.Decimal" />
+        <Property Name="RequireOtherProducts" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="RequiredProductIds" Type="Edm.String" />
+        <Property Name="AutomaticallyAddRequiredProducts" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsDownload" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DownloadId" Type="Edm.String" />
+        <Property Name="UnlimitedDownloads" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DownloadActivationType" Type="Default.DownloadActivationType" Nullable="false" />
+        <Property Name="MaxNumberOfDownloads" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DownloadExpirationDays" Type="Edm.Int32" />
+        <Property Name="HasSampleDownload" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SampleDownloadId" Type="Edm.String" />
+        <Property Name="HasUserAgreement" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="UserAgreementText" Type="Edm.String" />
+        <Property Name="IsRecurring" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="RecurringCycleLength" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RecurringTotalCycles" Type="Edm.Int32" Nullable="false" />
+        <Property Name="RecurringCyclePeriod" Type="Default.RecurringProductCyclePeriod" Nullable="false" />
+        <Property Name="IncBothDate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Interval" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IntervalUnitType" Type="Default.IntervalUnit" Nullable="false" />
+        <Property Name="IsShipEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsFreeShipping" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ShipSeparately" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AdditionalShippingCharge" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DeliveryDateId" Type="Edm.String" />
+        <Property Name="IsTaxExempt" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TaxCategoryId" Type="Edm.String" />
+        <Property Name="IsTele" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="UseMultipleWarehouses" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="WarehouseId" Type="Edm.String" />
+        <Property Name="StockQuantity" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ManageInventoryMethod" Type="Default.ManageInventoryMethod" Nullable="false" />
+        <Property Name="DisplayStockAvailability" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayStockQuantity" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MinStockQuantity" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LowStock" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="LowStockActivity" Type="Default.LowStockActivity" Nullable="false" />
+        <Property Name="NotifyAdminForQuantityBelow" Type="Edm.Int32" Nullable="false" />
+        <Property Name="BackorderMode" Type="Default.BackorderMode" Nullable="false" />
+        <Property Name="AllowBackInStockSubscriptions" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="OrderMinimumQuantity" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OrderMaximumQuantity" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowedQuantities" Type="Edm.String" />
+        <Property Name="AllowAddingOnlyExistingAttributeCombinations" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="NotReturnable" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableBuyButton" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisableWishlistButton" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AvailableForPreOrder" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PreOrderAvailabilityStartDateTimeUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="CallForPrice" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Price" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="OldPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CatalogPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="ProductCost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="CustomerEntersPrice" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MinimumCustomerEnteredPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="MaximumCustomerEnteredPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BasepriceEnabled" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="BasepriceAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BasepriceUnitId" Type="Edm.String" />
+        <Property Name="BasepriceBaseAmount" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="BasepriceBaseUnitId" Type="Edm.String" />
+        <Property Name="UnitId" Type="Edm.String" />
+        <Property Name="MarkAsNew" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="MarkAsNewStartDateTimeUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="MarkAsNewEndDateTimeUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="Weight" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Length" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Width" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Height" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AvailableStartDateTimeUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="AvailableEndDateTimeUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="StartPrice" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="AuctionEnded" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DisplayOrderCategory" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DisplayOrderManufacturer" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Published" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="CreatedOnUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="UpdatedOnUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="Sold" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Viewed" Type="Edm.Int64" Nullable="false" />
+        <Property Name="OnSale" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Flag" Type="Edm.String" />
+        <Property Name="Categories" Type="Collection(Default.ProductCategoryDto)" />
+        <Property Name="Manufacturers" Type="Collection(Default.ProductManufacturerDto)" />
+        <Property Name="Pictures" Type="Collection(Default.ProductPictureDto)" />
+        <Property Name="SpecificationAttribute" Type="Collection(Default.ProductSpecificationAttributeDto)" />
+        <Property Name="TierPrices" Type="Collection(Default.ProductTierPriceDto)" />
+        <Property Name="WarehouseInventory" Type="Collection(Default.ProductWarehouseInventoryDto)" />
+        <Property Name="AttributeMappings" Type="Collection(Default.ProductAttributeMappingDto)" />
+        <Property Name="AttributeCombinations" Type="Collection(Default.ProductAttributeCombinationDto)" />
+        <Property Name="Tags" Type="Collection(Edm.String)" />
+        <Property Name="AppliedDiscounts" Type="Collection(Edm.String)" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="ProductCategoryDto">
+        <Property Name="CategoryId" Type="Edm.String" />
+        <Property Name="IsFeaturedProduct" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ProductManufacturerDto">
+        <Property Name="ManufacturerId" Type="Edm.String" />
+        <Property Name="IsFeaturedProduct" Type="Edm.Boolean" Nullable="false" />
+      </ComplexType>
+      <ComplexType Name="ProductPictureDto">
+        <Property Name="PictureId" Type="Edm.String" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="MimeType" Type="Edm.String" />
+        <Property Name="SeoFilename" Type="Edm.String" />
+        <Property Name="AltAttribute" Type="Edm.String" />
+        <Property Name="TitleAttribute" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ProductSpecificationAttributeDto">
+        <Property Name="SpecificationAttributeId" Type="Edm.String" />
+        <Property Name="SpecificationAttributeOptionId" Type="Edm.String" />
+        <Property Name="CustomValue" Type="Edm.String" />
+        <Property Name="AllowFiltering" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ShowOnProductPage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AttributeType" Type="Default.SpecificationAttributeType" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ProductTierPriceDto">
+        <Property Name="StoreId" Type="Edm.String" />
+        <Property Name="CustomerRoleId" Type="Edm.String" />
+        <Property Name="Quantity" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Price" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="StartDateTimeUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="EndDateTimeUtc" Type="Edm.DateTimeOffset" />
+        <Property Name="Id" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ProductWarehouseInventoryDto">
+        <Property Name="WarehouseId" Type="Edm.String" />
+        <Property Name="StockQuantity" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ReservedQuantity" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ProductAttributeMappingDto">
+        <Property Name="ProductAttributeId" Type="Edm.String" />
+        <Property Name="TextPrompt" Type="Edm.String" />
+        <Property Name="IsRequired" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ValidationMinLength" Type="Edm.Int32" />
+        <Property Name="ValidationMaxLength" Type="Edm.Int32" />
+        <Property Name="ValidationFileAllowedExtensions" Type="Edm.String" />
+        <Property Name="ValidationFileMaximumSize" Type="Edm.Int32" />
+        <Property Name="DefaultValue" Type="Edm.String" />
+        <Property Name="ConditionAttributeXml" Type="Edm.String" />
+        <Property Name="AttributeControlType" Type="Default.AttributeControlType" Nullable="false" />
+        <Property Name="ProductAttributeValues" Type="Collection(Default.ProductAttributeValueDto)" />
+        <Property Name="Id" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ProductAttributeValueDto">
+        <Property Name="AssociatedProductId" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="ColorSquaresRgb" Type="Edm.String" />
+        <Property Name="ImageSquaresPictureId" Type="Edm.String" />
+        <Property Name="PriceAdjustment" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="WeightAdjustment" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Cost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Quantity" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IsPreSelected" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PictureId" Type="Edm.String" />
+        <Property Name="AttributeValueType" Type="Default.AttributeValueType" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" />
+      </ComplexType>
+      <ComplexType Name="ProductAttributeCombinationDto">
+        <Property Name="AttributesXml" Type="Edm.String" />
+        <Property Name="StockQuantity" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowOutOfStockOrders" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Text" Type="Edm.String" />
+        <Property Name="Sku" Type="Edm.String" />
+        <Property Name="ManufacturerPartNumber" Type="Edm.String" />
+        <Property Name="Gtin" Type="Edm.String" />
+        <Property Name="OverriddenPrice" Type="Edm.Decimal" />
+        <Property Name="NotifyAdminForQuantityBelow" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PictureId" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="CategoryDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="CategoryTemplateId" Type="Edm.String" />
+        <Property Name="MetaKeywords" Type="Edm.String" />
+        <Property Name="MetaDescription" Type="Edm.String" />
+        <Property Name="MetaTitle" Type="Edm.String" />
+        <Property Name="SeName" Type="Edm.String" />
+        <Property Name="ParentCategoryId" Type="Edm.String" />
+        <Property Name="PictureId" Type="Edm.String" />
+        <Property Name="PageSize" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowCustomersToSelectPageSize" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PageSizeOptions" Type="Edm.String" />
+        <Property Name="PriceRanges" Type="Edm.String" />
+        <Property Name="ShowOnHomePage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="FeaturedProductsOnHomaPage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IncludeInTopMenu" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Published" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Flag" Type="Edm.String" />
+        <Property Name="FlagStyle" Type="Edm.String" />
+        <Property Name="Icon" Type="Edm.String" />
+        <Property Name="HideOnCatalog" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ShowOnSearchBox" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SearchBoxDisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ManufacturerDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="SeName" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="ManufacturerTemplateId" Type="Edm.String" />
+        <Property Name="MetaKeywords" Type="Edm.String" />
+        <Property Name="MetaDescription" Type="Edm.String" />
+        <Property Name="MetaTitle" Type="Edm.String" />
+        <Property Name="PictureId" Type="Edm.String" />
+        <Property Name="PageSize" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowCustomersToSelectPageSize" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="PageSizeOptions" Type="Edm.String" />
+        <Property Name="PriceRanges" Type="Edm.String" />
+        <Property Name="ShowOnHomePage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="FeaturedProductsOnHomaPage" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IncludeInTopMenu" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Icon" Type="Edm.String" />
+        <Property Name="Published" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ProductAttributeDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="PredefinedProductAttributeValues" Type="Collection(Default.PredefinedProductAttributeValueDto)" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="PredefinedProductAttributeValueDto">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="PriceAdjustment" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="WeightAdjustment" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="Cost" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="IsPreSelected" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="SpecificationAttributeDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SpecificationAttributeOptions" Type="Collection(Default.SpecificationAttributeOptionDto)" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <ComplexType Name="SpecificationAttributeOptionDto">
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ColorSquaresRgb" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="CustomerDto">
+        <Key>
+          <PropertyRef Name="Email" />
+        </Key>
+        <Property Name="Id" Type="Edm.String" />
+        <Property Name="CustomerGuid" Type="Edm.Guid" Nullable="false" />
+        <Property Name="Username" Type="Edm.String" />
+        <Property Name="Email" Type="Edm.String" Nullable="false" />
+        <Property Name="AdminComment" Type="Edm.String" />
+        <Property Name="IsTaxExempt" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="FreeShipping" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="AffiliateId" Type="Edm.String" />
+        <Property Name="VendorId" Type="Edm.String" />
+        <Property Name="StoreId" Type="Edm.String" />
+        <Property Name="Active" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Deleted" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Gender" Type="Edm.String" />
+        <Property Name="FirstName" Type="Edm.String" />
+        <Property Name="LastName" Type="Edm.String" />
+        <Property Name="DateOfBirth" Type="Edm.DateTimeOffset" />
+        <Property Name="Company" Type="Edm.String" />
+        <Property Name="StreetAddress" Type="Edm.String" />
+        <Property Name="StreetAddress2" Type="Edm.String" />
+        <Property Name="ZipPostalCode" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="CountryId" Type="Edm.String" />
+        <Property Name="StateProvinceId" Type="Edm.String" />
+        <Property Name="Phone" Type="Edm.String" />
+        <Property Name="Fax" Type="Edm.String" />
+        <Property Name="VatNumber" Type="Edm.String" />
+        <Property Name="VatNumberStatusId" Type="Edm.String" />
+        <Property Name="Signature" Type="Edm.String" />
+        <Property Name="CustomerRoles" Type="Collection(Edm.String)" />
+        <Property Name="Addresses" Type="Collection(Default.AddressDto)" />
+      </EntityType>
+      <ComplexType Name="AddressDto">
+        <Property Name="FirstName" Type="Edm.String" />
+        <Property Name="LastName" Type="Edm.String" />
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="Company" Type="Edm.String" />
+        <Property Name="VatNumber" Type="Edm.String" />
+        <Property Name="CountryId" Type="Edm.String" />
+        <Property Name="StateProvinceId" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="Address1" Type="Edm.String" />
+        <Property Name="Address2" Type="Edm.String" />
+        <Property Name="ZipPostalCode" Type="Edm.String" />
+        <Property Name="PhoneNumber" Type="Edm.String" />
+        <Property Name="FaxNumber" Type="Edm.String" />
+        <Property Name="CustomAttributes" Type="Edm.String" />
+        <Property Name="CreatedOnUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="CustomerRoleDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="FreeShipping" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="TaxExempt" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Active" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsSystemRole" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SystemName" Type="Edm.String" />
+        <Property Name="EnablePasswordLifetime" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="VendorDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="SeName" Type="Edm.String" />
+        <Property Name="PictureId" Type="Edm.String" />
+        <Property Name="Email" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="StoreId" Type="Edm.String" />
+        <Property Name="AdminComment" Type="Edm.String" />
+        <Property Name="Active" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Deleted" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="AllowCustomerReviews" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ApprovedRatingSum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="NotApprovedRatingSum" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ApprovedTotalReviews" Type="Edm.Int32" Nullable="false" />
+        <Property Name="NotApprovedTotalReviews" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Address" Type="Default.AddressDto" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="WarehouseDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="AdminComment" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="DeliveryDateDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ColorSquaresRgb" Type="Edm.String" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="PickupPointDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="AdminComment" Type="Edm.String" />
+        <Property Name="WarehouseId" Type="Edm.String" />
+        <Property Name="StoreId" Type="Edm.String" />
+        <Property Name="PickupFee" Type="Edm.Decimal" Nullable="false" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EntityType Name="ShippingMethodDto">
+        <Key>
+          <PropertyRef Name="Id" />
+        </Key>
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Id" Type="Edm.String" Nullable="false" />
+      </EntityType>
+      <EnumType Name="SpecificationAttributeType">
+        <Member Name="Option" Value="0" />
+        <Member Name="CustomText" Value="10" />
+        <Member Name="CustomHtmlText" Value="20" />
+        <Member Name="Hyperlink" Value="30" />
+      </EnumType>
+      <EnumType Name="ProductType">
+        <Member Name="SimpleProduct" Value="5" />
+        <Member Name="GroupedProduct" Value="10" />
+        <Member Name="Reservation" Value="15" />
+        <Member Name="BundledProduct" Value="20" />
+        <Member Name="Auction" Value="25" />
+      </EnumType>
+      <EnumType Name="GiftCardType">
+        <Member Name="Virtual" Value="0" />
+        <Member Name="Physical" Value="1" />
+      </EnumType>
+      <EnumType Name="DownloadActivationType">
+        <Member Name="WhenOrderIsPaid" Value="0" />
+        <Member Name="Manually" Value="10" />
+      </EnumType>
+      <EnumType Name="RecurringProductCyclePeriod">
+        <Member Name="Days" Value="0" />
+        <Member Name="Weeks" Value="10" />
+        <Member Name="Months" Value="20" />
+        <Member Name="Years" Value="30" />
+      </EnumType>
+      <EnumType Name="IntervalUnit">
+        <Member Name="Minute" Value="0" />
+        <Member Name="Hour" Value="5" />
+        <Member Name="Day" Value="10" />
+      </EnumType>
+      <EnumType Name="ManageInventoryMethod">
+        <Member Name="DontManageStock" Value="0" />
+        <Member Name="ManageStock" Value="1" />
+        <Member Name="ManageStockByAttributes" Value="2" />
+        <Member Name="ManageStockByBundleProducts" Value="3" />
+      </EnumType>
+      <EnumType Name="LowStockActivity">
+        <Member Name="Nothing" Value="0" />
+        <Member Name="DisableBuyButton" Value="1" />
+        <Member Name="Unpublish" Value="2" />
+      </EnumType>
+      <EnumType Name="BackorderMode">
+        <Member Name="NoBackorders" Value="0" />
+        <Member Name="AllowQtyBelow0" Value="1" />
+        <Member Name="AllowQtyBelow0AndNotifyCustomer" Value="2" />
+      </EnumType>
+      <EnumType Name="AttributeControlType">
+        <Member Name="DropdownList" Value="1" />
+        <Member Name="RadioList" Value="2" />
+        <Member Name="Checkboxes" Value="3" />
+        <Member Name="TextBox" Value="4" />
+        <Member Name="MultilineTextbox" Value="10" />
+        <Member Name="Datepicker" Value="20" />
+        <Member Name="FileUpload" Value="30" />
+        <Member Name="ColorSquares" Value="40" />
+        <Member Name="ImageSquares" Value="45" />
+        <Member Name="ReadonlyCheckboxes" Value="50" />
+      </EnumType>
+      <EnumType Name="AttributeValueType">
+        <Member Name="Simple" Value="0" />
+        <Member Name="AssociatedToProduct" Value="10" />
+      </EnumType>
+      <Action Name="UpdateStock" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="WarehouseId" Type="Edm.String" />
+        <Parameter Name="Stock" Type="Edm.Int32" Nullable="false" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="CreateProductCategory" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="CategoryId" Type="Edm.String" />
+        <Parameter Name="IsFeaturedProduct" Type="Edm.Boolean" Nullable="false" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="UpdateProductCategory" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="CategoryId" Type="Edm.String" />
+        <Parameter Name="IsFeaturedProduct" Type="Edm.Boolean" Nullable="false" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="DeleteProductCategory" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="CategoryId" Type="Edm.String" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="CreateProductManufacturer" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="ManufacturerId" Type="Edm.String" />
+        <Parameter Name="IsFeaturedProduct" Type="Edm.Boolean" Nullable="false" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="UpdateProductManufacturer" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="ManufacturerId" Type="Edm.String" />
+        <Parameter Name="IsFeaturedProduct" Type="Edm.Boolean" Nullable="false" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="DeleteProductManufacturer" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="ManufacturerId" Type="Edm.String" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="CreateProductPicture" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="PictureId" Type="Edm.String" />
+        <Parameter Name="MimeType" Type="Edm.String" />
+        <Parameter Name="SeoFilename" Type="Edm.String" />
+        <Parameter Name="AltAttribute" Type="Edm.String" />
+        <Parameter Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Parameter Name="TitleAttribute" Type="Edm.String" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="UpdateProductPicture" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="PictureId" Type="Edm.String" />
+        <Parameter Name="MimeType" Type="Edm.String" />
+        <Parameter Name="SeoFilename" Type="Edm.String" />
+        <Parameter Name="AltAttribute" Type="Edm.String" />
+        <Parameter Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Parameter Name="TitleAttribute" Type="Edm.String" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="DeleteProductPicture" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="PictureId" Type="Edm.String" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="CreateProductSpecification" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="Id" Type="Edm.String" />
+        <Parameter Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Parameter Name="CustomValue" Type="Edm.String" />
+        <Parameter Name="AttributeType" Type="Default.SpecificationAttributeType" Nullable="false" />
+        <Parameter Name="AllowFiltering" Type="Edm.Boolean" Nullable="false" />
+        <Parameter Name="SpecificationAttributeId" Type="Edm.String" />
+        <Parameter Name="ShowOnProductPage" Type="Edm.Boolean" Nullable="false" />
+        <Parameter Name="SpecificationAttributeOptionId" Type="Edm.String" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="UpdateProductSpecification" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="Id" Type="Edm.String" />
+        <Parameter Name="DisplayOrder" Type="Edm.Int32" Nullable="false" />
+        <Parameter Name="CustomValue" Type="Edm.String" />
+        <Parameter Name="AttributeType" Type="Default.SpecificationAttributeType" Nullable="false" />
+        <Parameter Name="AllowFiltering" Type="Edm.Boolean" Nullable="false" />
+        <Parameter Name="SpecificationAttributeId" Type="Edm.String" />
+        <Parameter Name="ShowOnProductPage" Type="Edm.Boolean" Nullable="false" />
+        <Parameter Name="SpecificationAttributeOptionId" Type="Edm.String" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="DeleteProductSpecification" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="Id" Type="Edm.String" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="CreateProductTierPrice" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="Quantity" Type="Edm.Int32" Nullable="false" />
+        <Parameter Name="Price" Type="Edm.Decimal" Nullable="false" />
+        <Parameter Name="StoreId" Type="Edm.String" />
+        <Parameter Name="CustomerRoleId" Type="Edm.String" />
+        <Parameter Name="StartDateTimeUtc" Type="Edm.DateTimeOffset" />
+        <Parameter Name="EndDateTimeUtc" Type="Edm.DateTimeOffset" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="UpdateProductTierPrice" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="Id" Type="Edm.String" />
+        <Parameter Name="Quantity" Type="Edm.Int32" Nullable="false" />
+        <Parameter Name="Price" Type="Edm.Decimal" Nullable="false" />
+        <Parameter Name="StoreId" Type="Edm.String" />
+        <Parameter Name="CustomerRoleId" Type="Edm.String" />
+        <Parameter Name="StartDateTimeUtc" Type="Edm.DateTimeOffset" />
+        <Parameter Name="EndDateTimeUtc" Type="Edm.DateTimeOffset" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="DeleteProductTierPrice" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.ProductDto" />
+        <Parameter Name="Id" Type="Edm.String" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="AddAddress" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.CustomerDto" />
+        <Parameter Name="Id" Type="Edm.String" />
+        <Parameter Name="City" Type="Edm.String" />
+        <Parameter Name="Email" Type="Edm.String" />
+        <Parameter Name="Company" Type="Edm.String" />
+        <Parameter Name="Address1" Type="Edm.String" />
+        <Parameter Name="Address2" Type="Edm.String" />
+        <Parameter Name="LastName" Type="Edm.String" />
+        <Parameter Name="CountryId" Type="Edm.String" />
+        <Parameter Name="FaxNumber" Type="Edm.String" />
+        <Parameter Name="FirstName" Type="Edm.String" />
+        <Parameter Name="VatNumber" Type="Edm.String" />
+        <Parameter Name="PhoneNumber" Type="Edm.String" />
+        <Parameter Name="CustomAttributes" Type="Edm.String" />
+        <Parameter Name="CreatedOnUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Parameter Name="ZipPostalCode" Type="Edm.String" />
+        <Parameter Name="StateProvinceId" Type="Edm.String" />
+        <ReturnType Type="Default.AddressDto" />
+      </Action>
+      <Action Name="UpdateAddress" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.CustomerDto" />
+        <Parameter Name="Id" Type="Edm.String" />
+        <Parameter Name="City" Type="Edm.String" />
+        <Parameter Name="Email" Type="Edm.String" />
+        <Parameter Name="Company" Type="Edm.String" />
+        <Parameter Name="Address1" Type="Edm.String" />
+        <Parameter Name="Address2" Type="Edm.String" />
+        <Parameter Name="LastName" Type="Edm.String" />
+        <Parameter Name="CountryId" Type="Edm.String" />
+        <Parameter Name="FaxNumber" Type="Edm.String" />
+        <Parameter Name="FirstName" Type="Edm.String" />
+        <Parameter Name="VatNumber" Type="Edm.String" />
+        <Parameter Name="PhoneNumber" Type="Edm.String" />
+        <Parameter Name="CustomAttributes" Type="Edm.String" />
+        <Parameter Name="CreatedOnUtc" Type="Edm.DateTimeOffset" Nullable="false" />
+        <Parameter Name="ZipPostalCode" Type="Edm.String" />
+        <Parameter Name="StateProvinceId" Type="Edm.String" />
+        <ReturnType Type="Default.AddressDto" />
+      </Action>
+      <Action Name="DeleteAddress" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.CustomerDto" />
+        <Parameter Name="addressId" Type="Edm.String" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <Action Name="SetPassword" IsBound="true">
+        <Parameter Name="bindingParameter" Type="Default.CustomerDto" />
+        <Parameter Name="password" Type="Edm.String" />
+        <ReturnType Type="Edm.Boolean" Nullable="false" />
+      </Action>
+      <EntityContainer Name="Container">
+        <EntitySet Name="Language" EntityType="Default.LanguageDto" />
+        <EntitySet Name="Currency" EntityType="Default.CurrencyDto" />
+        <EntitySet Name="Store" EntityType="Default.StoreDto" />
+        <EntitySet Name="Country" EntityType="Default.CountryDto" />
+        <EntitySet Name="StateProvince" EntityType="Default.StateProvinceDto" />
+        <EntitySet Name="CategoryTemplate" EntityType="Default.MessageTemplateDto" />
+        <EntitySet Name="ManufacturerTemplate" EntityType="Default.MessageTemplateDto" />
+        <EntitySet Name="ProductTemplate" EntityType="Default.MessageTemplateDto" />
+        <EntitySet Name="Picture" EntityType="Default.PictureDto" />
+        <EntitySet Name="Product" EntityType="Default.ProductDto" />
+        <EntitySet Name="Category" EntityType="Default.CategoryDto" />
+        <EntitySet Name="Manufacturer" EntityType="Default.ManufacturerDto" />
+        <EntitySet Name="ProductAttribute" EntityType="Default.ProductAttributeDto" />
+        <EntitySet Name="SpecificationAttribute" EntityType="Default.SpecificationAttributeDto" />
+        <EntitySet Name="Customer" EntityType="Default.CustomerDto" />
+        <EntitySet Name="CustomerRole" EntityType="Default.CustomerRoleDto" />
+        <EntitySet Name="Vendor" EntityType="Default.VendorDto" />
+        <EntitySet Name="Warehouse" EntityType="Default.WarehouseDto" />
+        <EntitySet Name="DeliveryDate" EntityType="Default.DeliveryDateDto" />
+        <EntitySet Name="PickupPoint" EntityType="Default.PickupPointDto" />
+        <EntitySet Name="ShippingMethod" EntityType="Default.ShippingMethodDto" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
